@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Questions</title>
+</head>
+<body class='mr50'>
+	<%- include('header'); -%>
+
+	<h1>Question Management</h1>
+	<div>
+		<% if(locals.err){%>
+		<div class="alert alert-danger alert-error"><%= locals.err || '' %></div>
+		<% }%>
+
+		<table class="table table-hover" ng-controller='ListQuestionController'>
+			<thead>
+				<tr>
+					<th>Index</th>
+					<th>questName</th>
+					<th>questType</th>
+					<th>questBackground</th>
+					<th>questAns1</th>
+					<th>questCorrect1</th>
+					<th>questAns2</th>
+					<th>questCorrect2</th>
+					<th>questAns3</th>
+					<th>questCorrect3</th>
+					<th>questAns4</th>
+					<th>questCorrect4</th>
+					<th>questAns5</th>
+					<th>questCorrect5</th>
+					<th>questAns6</th>
+					<th>questCorrect6</th>
+					<th>questAns7</th>
+					<th>questCorrect7</th>
+					<th>questAns8</th>
+					<th>questCorrect8</th>
+					<th>questAns9</th>
+					<th>questCorrect9</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='ele in data'>
+					<td>{{$index + 1}}</td>
+					<td>{{ele.questName}}</td>
+					<td>{{ele.questType}}</td>
+					<td>{{ele.questBackground}}</td>
+					<td>{{ele.questAns1}}</td>
+					<td>{{ele.questCorrect1}}</td>
+					<td>{{ele.questAns2}}</td>
+					<td>{{ele.questCorrect2}}</td>
+					<td>{{ele.questAns3}}</td>
+					<td>{{ele.questCorrect3}}</td>
+					<td>{{ele.questAns4}}</td>
+					<td>{{ele.questCorrect4}}</td>
+					<td>{{ele.questAns5}}</td>
+					<td>{{ele.questCorrect5}}</td>
+					<td>{{ele.questAns6}}</td>
+					<td>{{ele.questCorrect6}}</td>
+					<td>{{ele.questAns7}}</td>
+					<td>{{ele.questCorrect7}}</td>
+					<td>{{ele.questAns8}}</td>
+					<td>{{ele.questCorrect8}}</td>
+					<td>{{ele.questAns9}}</td>
+					<td>{{ele.questCorrect9}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<%- include('footer'); -%>
+	</div>
+	<script>
+		function ListQuestionController($scope) {
+			$scope.data = <%- locals.data  %>;
+		}
+	</script>
+</body>
+</html>

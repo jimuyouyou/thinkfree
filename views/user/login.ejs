@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Login</title>
+</head>
+
+<body class='mr50' ng-controller='LoginController'>
+	<div>
+		<%- include('header'); -%>
+		<div>
+			<button type="button" class="btn btn-success" ng-click="login()">Login</button>
+			<button type="button" class="btn btn-success" ng-click="signup()">Signup</button>
+		</div>
+
+		<div>
+			<p>Welcome to Login thinker!</p>
+		</div>
+
+		<%- include('footer'); -%>
+	</div>
+</body>
+<script type="text/javascript" src='/javascripts/custom/controller/LoginController.js'></script>
+</html>

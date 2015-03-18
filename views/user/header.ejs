@@ -1,0 +1,17 @@
+<%- include('../header'); -%> <% if(locals.err){%>
+<div class="alert alert-danger alert-error"><%= locals.err || '' %></div>
+<% }%>
+<div>
+	<ul class="nav nav-pills text-danger">
+		<li><a href="/"> Thinkfree </a></li>
+		<li class="active"><a href="/home">
+				<span class="glyphicon glyphicon-home"></span> Home
+			</a></li>
+		<li><a href="/account">
+				<span class="glyphicon glyphicon-user"></span> Profile
+			</a></li>
+		<li><a href="/messages">
+				<span class="glyphicon glyphicon-envelope"></span> Messages
+			</a></li>
+	</ul>
+</div>

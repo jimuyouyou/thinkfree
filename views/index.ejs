@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title><%= locals.title || '' %></title> <%- include('header'); -%>
+</head>
+
+<body ng-controller='HomeController'>
+	<div class='mr50'>
+		<% if(locals.err){%>
+		<div class="alert alert-danger alert-error"><%= locals.err || '' %></div>
+		<% }%>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+						class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span
+						class="glyphicon glyphicon-star"></span> Free of thinking for critical cases!
+				</h3>
+			</div>
+			<div class="panel-body">
+				<div>
+					<form class="form-inline" role="form" name='loginForm' method='post' action="/login">
+						<div class="form-group">
+							<label class="sr-only" for="inputEmail">Email</label>
+							<input type="email" name='email' class="form-control" id="inputEmail" placeholder="Email" required>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="inputPassword">Password</label>
+							<input type="password" name='password' class="form-control" id="inputPassword" placeholder="Password" required>
+						</div>
+						<div class="checkbox">
+							<label><input type="checkbox"> Remember me</label>
+						</div>
+						<button type="submit" class="btn btn-success" ng-disabled="loginForm.$invalid">Login</button>
+						<a href="/signup" class="btn btn-success">Signup</a>
+
+						<div class='form-group'>
+							<a href="/" class="btn btn-link">Home</a>
+							<a href="/" class="btn btn-default">About</a>
+							<a href="/" class="btn btn-success">Testimonials</a>
+							<a href="/" class="btn btn-warning">Study Plans</a>
+							<a href="/" class="btn btn-danger">Contact Us</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<div>
+			<div>
+				<h1 class='bg-success text-success'>
+					<span class='glyphicon glyphicon-flash'></span>Free of thinking<span class='glyphicon glyphicon-flash'></span>
+				</h1>
+				<div>
+					<p>Thinkfree aims to improve nothing but your thinking ability! Generally speaking, it is the ability of
+						critical thinking. We can help you improve that by a series of free services.</p>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Service/Courses</th>
+								<th>Recommended</th>
+								<th>Price</th>
+							</tr>
+							<tr>
+								<td>Think-free is for <span class='text-danger'>Everyone</span></td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Basic understanding about critical thinking</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>What are the obstacles for applying critical thinking</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>What can we do for you to be free of these obstacles</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Why we are better than other organizations or commercial institutions</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Basic math logic for critical thinking</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Math problems solving by think-free</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Basic verbal logic for critical thinking</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Verbal problems solving by think-free</td>
+								<td>Yes - <span class='text-danger'>Everyone</span></td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Advanced math logic and intuition solving by think-free</td>
+								<td>Yes - Academic Research Students</td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+							<tr>
+								<td>Advanced verbal logic and intuition solving by think-free</td>
+								<td>Yes - Academic Research Students</td>
+								<td class='text-success'>Free<span class='glyphicon glyphicon-leaf'></span></td>
+							</tr>
+						</thead>
+						</div>
+
+						</div>
+						</div>
+
+						<%- include('footer'); -%>
+						</div>
+</body>
+<script type="text/javascript" src='/javascripts/custom/controller/HomeController.js'></script>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Questions</title>
+</head>
+<body class='mr50' ng-controller='QuestionController'>
+	<div>
+		<%- include('header'); -%>
+
+		<div>
+			<a class="btn btn-link" href="/listQuestion">List Question</a>
+		</div>
+
+		<% if(locals.err){%>
+		<div class="alert alert-danger alert-error"><%= locals.err || '' %></div>
+		<% }%>
+		<p></p>
+		<form class="form-horizontal" name='myForm' method='post' action='/addQuestion'>
+			<div class="form-group">
+				<label class="control-label col-xs-1" for="findQuestName"></label>
+				<a class="control-label col-xs-1 btn btn-default" ng-click="findByName()">Search:</a>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="findQuestName" name='findQuestName' ng-model='findQuestName'
+						placeholder="Question Name">
+				</div>
+			</div>
+			<hr />
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questName">Question Name:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questName" name='questName' value="{{data.questName}}"
+						placeholder="Question Name" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questType">Question Type:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questType" name='questType' value="{{data.questType}}"
+						placeholder="Question Type" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questBackground">Question Background:</label>
+				<div class="col-xs-9">
+					<textarea class="form-control" id="questBackground" name='questBackground' placeholder="Question Background"
+						required>{{data.questBackground}}</textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns1">Question Answer 1:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns1" name='questAns1' value="{{data.questAns1}}"
+						placeholder="Question Answer 1" required>
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect1" name='questCorrect1' ng-model='data.questCorrect1'
+						placeholder="Question Correct 1">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab1">Question Label 1:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab1" name='questLab1' value="{{data.questLab1}}"
+						placeholder="Question Label 1">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns2">Question Answer 2:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns2" name='questAns2' value="{{data.questAns2}}"
+						placeholder="Question Answer 2">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect2" name='questCorrect2' ng-model="data.questCorrect2"
+						placeholder="Question Correct 2">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab2">Question Label 2:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab2" name='questLab2' value="{{data.questLab2}}"
+						placeholder="Question Label 2">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns3">Question Answer 3:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns3" name='questAns3' value="{{data.questAns3}}"
+						placeholder="Question Answer 3">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect3" name='questCorrect3' ng-model="data.questCorrect3"
+						placeholder="Question Correct 3">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab3">Question Label 3:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab3" name='questLab3' value="{{data.questLab3}}"
+						placeholder="Question Label 3">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns4">Question Answer 4:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns4" name='questAns4' value="{{data.questAns4}}"
+						placeholder="Question Answer 4">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect4" name='questCorrect4' ng-model="data.questCorrect4"
+						placeholder="Question Correct 4">
+				</div>
+
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab4">Question Label 4:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab4" name='questLab4' value="{{data.questLab4}}"
+						placeholder="Question Label 4">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns5">Question Answer 5:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns5" name='questAns5' value="{{data.questAns5}}"
+						placeholder="Question Answer 5">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect5" name='questCorrect5' ng-model="data.questCorrect5"
+						placeholder="Question Correct 5">
+				</div>
+
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab5">Question Label 5:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab5" name='questLab5' value="{{data.questLab5}}"
+						placeholder="Question Label 5">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns6">Question Answer 6:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns6" name='questAns6' value="{{data.questAns6}}"
+						placeholder="Question Answer 6">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect6" name='questCorrect6' ng-model="data.questCorrect6"
+						placeholder="Question Correct 6">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab6">Question Label 6:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab6" name='questLab6' value="{{data.questLab6}}"
+						placeholder="Question Label 6">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns7">Question Answer 7:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns7" name='questAns7' value="{{data.questAns7}}"
+						placeholder="Question Answer 7">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect7" name='questCorrect7' ng-model="data.questCorrect7"
+						placeholder="Question Correct 7">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab7">Question Label 7:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab7" name='questLab7' value="{{data.questLab7}}"
+						placeholder="Question Label 7">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns8">Question Answer 8:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns8" name='questAns8' value="{{data.questAns8}}"
+						placeholder="Question Answer 8">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect8" name='questCorrect8' ng-model="data.questCorrect8"
+						placeholder="Question Correct 8">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab8">Question Label 8:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab8" name='questLab8' value="{{data.questLab8}}"
+						placeholder="Question Label 8">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questAns9">Question Answer 9:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questAns9" name='questAns9' value="{{data.questAns9}}"
+						placeholder="Question Answer 9">
+				</div>
+				<div class="col-xs-1">
+					<input type="checkbox" class="form-control" id="questCorrect9" name='questCorrect9' ng-model="data.questCorrect9"
+						placeholder="Question Correct 9">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-2" for="questLab9">Question Label 9:</label>
+				<div class="col-xs-9">
+					<input type="text" class="form-control" id="questLab9" name='questLab9' placeholder="Question Label 9">
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-xs-offset-2 col-xs-10">
+					<input type="submit" class="btn btn-success" value="Submit" ng-disabled="myForm.$invalid">
+					<input type="reset" class="btn btn-default" value="Reset">
+				</div>
+			</div>
+		</form>
+		<%- include('footer'); -%>
+	</div>
+
+</body>
+<script>
+	function QuestionController($scope, $http) {
+		$scope.findByName = function() {
+			var url = 'findQuestionByName?questName=' + $scope.findQuestName;
+			$http.get(url).success(function(data) {
+				$scope.data = data;
+			}).error(function() {
+				alert("an unexpected error ocurred!");
+			});
+		};
+		//$scope.data = <%- locals.data  %>;
+	}
+</script>
+</html>
