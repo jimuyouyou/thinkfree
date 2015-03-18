@@ -3,7 +3,7 @@
 # thinkfree
 NodeJS ExpressJS Express-Session EJS Mongoose Mongoodb AngularJS Bootstrap
 
-This simple app aims to provide above techonologies integration.
+This simple app aims to provide above techonologies integration.<br>
 1. NodeJS is a trend now, so I use it as server here<br>
 2. ExpressJS is the most fastest way to create a node web application, that's why I choose it<br>
 3. Session is really very important for any real app, this is a must<br>
